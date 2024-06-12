@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample Interface</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css" id="stylesheetBase"/>
+    <link rel="stylesheet" href="styles/concept_style.css" type="text/css" id="stylesheetTheme"/>
+    <script type = "text/javascript" src = "js/script.js"> </script>
+  </head>
+  <body onload="initializePage()">
+    <!-- Tabs -->
+    <div id="tabList" class="tabList mainTabs">
+        <button class="tabs" onclick="openTab('Design')" id="defaultOpen">Design</button>
+        <button class="tabs" onclick="openTab('Data')">Data</button>
+        <button class="tabs" onclick="openTab('Settings')">Settings</button>
+        <button class="tabs" onclick="alert('External page would open here')">Help</button>
+        <button class="tabs" onclick="alert('External page would open here')">Guide</button>
+    </div>
+    <div id="Design" class="tabcontent">
+        <div id="designSubTabs" class="tabList">
+            <button class="designSubTab0" onclick="openDesignSubTab(0)">Tab 1</button>
+            <button class="designSubTab1" onclick="openDesignSubTab(1)">Tab 2</button>
+            <button class="addSubTab" onclick="addDesignSubTab()">+</button>
+        </div>
+        <div class="mainArea">
+            <div id="workspace0" class="workspace">
+            </div>
+        </div>
+        <div id="designSidebar" class="sidebar">
+            <div id="fieldInsertSection" class="sidebarSection">
+                <div class="sectionTitle">
+                    Add field type
+                </div>
+                <div id="fieldInserts" class="fieldInsertButtons">
+                    <button onclick="addField(0)">(textbox) Add field...</button>
+                    <button onclick="addField(1)">(checkbox) Add field...</button>
+                    <button onclick="addField(2)">(label) Add field...</button>
+                    <button onclick="addField(3)">(multichoice) Add field...</button>
+                </div>
+            </div>
+            <div id="uploadImageSection" class="sidebarSection">
+                <div id="uploadImageTitle" class="sectionTitle">
+                    Upload image
+                </div>
+                <div id="imageUpload">  
+                    <input type="file" id="image_source" accept="image/" onchange="createImgOrigin();"/>
+                </div>
+            </div>
+            
+            <div id="fieldInsertSection" class="sidebarSection">
+                <div id="fieldOptionTitle" class="sectionTitle">
+                    Field specific options
+                </div>
+                <div id="fieldOptions">
+            
+                </div>
+            </div>
+
+            <div id="extraSidebarButtons" class="bottomButtons">
+                <button onclick="alert('This opens a file saving dialog to save the created layout as a file which can be read later or shared.')"> Save Layout </button>
+                <button onclick="alert('This opens a file selection dialog to load a previously saved design file.')"> Load Layout </button>
+                <button onclick="startFill()"> Fill cards... </button>
+                <button class="dangerous" onclick="alert('This button deletes the current open tab, giving the user confirmation prompt.')"> Delete tab </button>
+            </div>
+        </div>
+    </div>
+    <div id="Fill" class="tabcontent">
+        <button onclick="stopFill()" class="return-to-fill"> ← Return </button>
+        <div id="designSidebar" class="sidebar no-subtabs">
+            <div id="variableSection" class="sidebarSection">
+                <div class="sectionTitle">
+                    Variables
+                </div>
+                <div id="variables" class="variableButtons">
+                </div>
+            </div>
+            <div id="cardButtonSection" class="sidebarSection">
+                <div id="cardButtonTitle" class="sectionTitle">
+                    Cards
+                </div>
+                <div id="cardButtons" class="cardButtons">  
+                    <div class="cardSection">
+                        <div class="cardSample" onclick="alert('Switches to the first card\'s variables (stuff which is different between cards).')">
+                                Card 1
+                            <button class="downloadCardSrc" onclick="alert('Downloads a data file, with variables defined for this card specifically.'); event.stopPropagation();">
+                            
+                            </button>
+                        </div>   
+                    </div>
+                    <div class="cardSection">
+                        <div class="cardSample" onclick="alert('Switches to the second card\'s variables. Some values, descriptions, and even colors may differ on this one.')">
+                            Card 2
+                           <button class="downloadCardSrc" onclick="alert('Downloads a data file, with variables defined for this card specifically.'); event.stopPropagation();">
+                            
+                            </button>
+                        </div>      
+                    </div>
+                </div>
+            </div>
+            <div id="bottomFillSidebarButtons" class="floorButton">
+                <button style="flex: 1;" onclick="addCardStats()">+</button>
+                <button style="flex: 4;" onclick="downloadAllCardSrc()">Download all</button>
+            </div>
+        </div>
+    </div>
+    <div id="Data" class="tabcontent data">
+        <div id="designSubTabs" class="tabList">
+            <button class="dataSubTab" onclick="openDataSubTab(0)"> Data Tab1 </button>
+            <button class="dataSubTab" onclick="openDataSubTab(1)"> Data Tab2 </button>
+            <button class="addSubTab" onclick="addDesignSubTab()">+</button>
+        </div>
+        <div id="textareaField" class="textareaField">
+            <textarea id="code">
+
+            </textarea>
+        </div>
+        <div id="dataSidebar" class="sidebar">
+            <div id="variableSection" class="sidebarSection">
+                <div class="sectionTitle">
+                    Params  
+                </div>
+                <div id="variables" class="variableButtons">
+                </div>
+            </div>
+
+            <div id="bottomDataSidebarButtons" class="floorButton">
+                <button style="flex: 1;" onclick="alert('Adds a variable bind. This binds some variable (from the fill menu) to a user-defined tag in the provided source code template.');">New var bind</button>
+            </div>
+        </div>
+    </div>
+    <div id="Settings" class="tabcontent">
+        Theme:
+        <select name="themeSelect">
+            <option value="base"> Concept </option>
+            <option value="dark"> Dark </option>
+            <option value="alt"> Alternative </option>
+        </select>
+    </div>
+  </body>
+</html>

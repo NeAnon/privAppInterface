@@ -1,0 +1,90 @@
+body {
+    background-color: #d9d9d9;
+}
+  
+  /* Style the tab */
+.tabList {
+    border: 1px solid #000000;
+    background-color: #d9d9d9;
+}
+  
+  /* Create an active/current tablink class */
+.tabList button.active {
+    background-color: #2f2f2f;
+}  
+
+  /* Style the buttons that are used to open the tab content */
+.tabList button {
+    background-color: #848484;
+    border: 2px solid #000000;
+    outline: none;
+    color:#ffffff;
+}
+  
+  /* Change background color of buttons on hover */
+.tabList button:hover {
+    background-color: #565656;
+}
+
+.sidebar{
+    outline: 1px solid #000000;
+}
+
+.sectionTitle {
+    background-color: #9e9e9e;
+    border: 1px solid #202020;
+    border-bottom: 2px solid #202020;
+}
+
+.fieldInsertButtons button{
+    border: 1px solid #000000;
+}
+
+.bottomButtons button{
+    outline: 1px solid #000000;
+}
+
+.dangerous{
+    background-color: #ff4040;
+}
+
+.dangerous:hover{
+    background-color: #cc0000;
+}
+
+.return-to-fill{
+    background-color: #9e9e9e;
+    outline: 1px solid #000000;
+}
+
+.return-to-fill:hover{
+    background-color: #848484;
+}
+
+.textareaField{
+    outline:1px solid #000000
+}
+
+.floorButton button{
+    border:2px solid #000000;
+}
+
+.cardSample{
+    border: 2px solid #000000;
+}
+
+.cardSample:hover{
+    background-color: #afafaf;
+}
+
+.downloadCardSrc{
+    background-image: url("../img/download.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #9e9e9e;
+}
+
+.downloadCardSrc:hover{
+    background-color: #848484;
+}

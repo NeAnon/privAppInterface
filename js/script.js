@@ -2,8 +2,7 @@ function initializePage(){
 	// Get the element with id="defaultOpen" and click on it  
 	document.getElementById('defaultOpen').click();
 
-    //Init sidebar section heights
-
+    addAnimations();
 }
 
 function openTab(tabName) {
@@ -96,4 +95,62 @@ function openDataSubTab(tab){
             break;
     }
     alert(message);
+}
+
+function addAnimations(){
+    // console.log(document.getElementsByClassName("tabs"));
+    for(let tab of document.getElementsByClassName("tabs")){    
+        //Design
+        if(tab.innerHTML == "Design"){
+            document.getElementById("design_icon").style.left = '4px';
+            tab.addEventListener('mouseover', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("design_icon").setAttribute("src", "./img/design_hover.gif");
+            }); 
+            tab.addEventListener('mouseout', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("design_icon").setAttribute("src", "./img/design_empty.png");
+            });
+            tab.addEventListener('mousedown', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("design_icon").setAttribute("src", "./img/design_active.gif");
+                document.getElementById("data_icon").setAttribute("src", "./img/data_initial.png");
+                document.getElementById("settings_icon").setAttribute("src", "./img/settings.png");
+            }) 
+        }
+        if(tab.innerHTML == "Data"){
+            document.getElementById("data_icon").style.left = '154px';
+            tab.addEventListener('mouseover', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("data_icon").setAttribute("src", "./img/data_hover.gif");
+            }); 
+            tab.addEventListener('mouseout', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("data_icon").setAttribute("src", "./img/data_initial.png");
+            });
+            tab.addEventListener('mousedown', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("design_icon").setAttribute("src", "./img/design_empty.png");
+                document.getElementById("data_icon").setAttribute("src", "./img/data_active.gif");
+                document.getElementById("settings_icon").setAttribute("src", "./img/settings.png");
+            }) 
+        }
+        if(tab.innerHTML == "Settings"){
+            document.getElementById("settings_icon").style.left = '304px';
+            tab.addEventListener('mouseover', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("settings_icon").setAttribute("src", "./img/settings_hover.gif");
+            }); 
+            tab.addEventListener('mouseout', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("settings_icon").setAttribute("src", "./img/settings.png");
+            });
+            tab.addEventListener('mousedown', ()=>{
+                if(tab.classList.contains("active")){return;}
+                document.getElementById("design_icon").setAttribute("src", "./img/design_empty.png");
+                document.getElementById("data_icon").setAttribute("src", "./img/data_initial.png");
+                document.getElementById("settings_icon").setAttribute("src", "./img/settings.png");
+            }) 
+        }
+    }
 }

@@ -28,7 +28,8 @@ body {
 
 .tabList.mainTabs button {
     width: 150px;
-    padding: 15px 15px;
+    padding: 15px 50px;
+    text-align: left;
 }
 
 .tabList button.addSubTab {
@@ -139,4 +140,11 @@ body {
     top:-8px;
     width: 30px;
     height: 30px;
+}
+
+.anim-icon{
+    position:fixed;
+    top:8px;
+    height:40px;
+    pointer-events: none;
 }
